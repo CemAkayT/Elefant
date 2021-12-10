@@ -8,7 +8,6 @@ public class Controller {
 
         DecimalFormat df = new DecimalFormat();
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
 
         int numOfItems;
         double valueOfItem;
