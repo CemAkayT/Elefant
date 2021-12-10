@@ -10,25 +10,26 @@ public class Controller {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
 
-        double numOfItems;
+        int numOfItems;
         double valueOfItem;
         String stateCode;
 
-        double taxRateUtah = 1.1;
-        double taxRateNevada = 1.2;
-        double taxRateTexas = 1.3;
-        double taxRateAL = 1.25;
-        double taxRateCA = 1.15;
+        double taxRateUtah = 1.0685;
+        double taxRateNevada = 1.08;
+        double taxRateTexas = 1.0625;
+        double taxRateAL = 1.04;
+        double taxRateCA = 1.0825;
 
 
         System.out.println("Indtast antal vare(r):");
-        numOfItems = scanner.nextDouble();
+        numOfItems = (int) scanner.nextDouble();
 
         System.out.println("Indtast pris på vare(rne):");
         valueOfItem = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.println("Indtast state code:");
-        stateCode = scanner1.nextLine().toLowerCase();
+        stateCode = scanner.nextLine().toLowerCase();
 
         double sum = 0.0;
         switch (stateCode) {
