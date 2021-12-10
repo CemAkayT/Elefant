@@ -1,18 +1,15 @@
 package com.company;
 
 import java.text.DecimalFormat;
-import java.util.Scanner;
 
-    public class Controller {
+public class Application {
     UserInterface ui = new UserInterface();
+    DecimalFormat df = new DecimalFormat("#.##");
 
-    public void start() {
 
-        DecimalFormat df = new DecimalFormat();
-        Scanner scanner = new Scanner(System.in);
+    public void run() {
 
-        double numOfItems;
-        double valueOfItem;
+        double numOfItems, valueOfItem;
         String stateCode;
 
         double taxRateUtah = 1.0685;
@@ -31,6 +28,7 @@ import java.util.Scanner;
         System.out.println("Indtast state code:");
         stateCode = ui.getInputString();
 
+
         double sum = 0.0;
         switch (stateCode) {
             case "ut" -> sum = (taxRateUtah * numOfItems * valueOfItem);
@@ -39,8 +37,8 @@ import java.util.Scanner;
             case "al" -> sum = (taxRateAL * numOfItems * valueOfItem);
             case "ca" -> sum = (taxRateCA * numOfItems * valueOfItem);
         }
-
         System.out.println("Før rabat: " + df.format(sum));
+
 
         if (sum > 50000) {
             System.out.println("Efter rabat: " + df.format(sum * 0.85));
@@ -57,6 +55,7 @@ import java.util.Scanner;
         } else {
             System.out.println("Efter rabat: " + df.format(sum * 0.97));
         }
+
     }
 
 }
