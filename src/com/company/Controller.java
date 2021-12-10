@@ -3,13 +3,15 @@ package com.company;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class Controller {
+    public class Controller {
+    UserInterface ui = new UserInterface();
+
     public void start() {
 
         DecimalFormat df = new DecimalFormat();
         Scanner scanner = new Scanner(System.in);
 
-        int numOfItems;
+        double numOfItems;
         double valueOfItem;
         String stateCode;
 
@@ -21,14 +23,13 @@ public class Controller {
 
 
         System.out.println("Indtast antal vare(r):");
-        numOfItems = (int) scanner.nextDouble();
+        numOfItems = ui.getInputDouble();
 
         System.out.println("Indtast pris på vare(rne):");
-        valueOfItem = scanner.nextDouble();
-        scanner.nextLine();
+        valueOfItem = ui.getInputDouble();
 
         System.out.println("Indtast state code:");
-        stateCode = scanner.nextLine().toLowerCase();
+        stateCode = ui.getInputString();
 
         double sum = 0.0;
         switch (stateCode) {
