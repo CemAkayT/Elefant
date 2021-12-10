@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public class Application {
     UserInterface ui = new UserInterface();
-    DecimalFormat df = new DecimalFormat("#.##");
+    DecimalFormat df = new DecimalFormat(".##DKK");
 
 
     public void run() {
@@ -19,10 +19,10 @@ public class Application {
         double taxRateCA = 1.0825;
 
 
-        System.out.println("Indtast antal vare(r):");
+        System.out.println("Indtast antal varer:");
         numOfItems = ui.getInputDouble();
 
-        System.out.println("Indtast pris på vare(rne):");
+        System.out.println("Indtast pris på vare:");
         valueOfItem = ui.getInputDouble();
 
         System.out.println("Indtast state code:");
